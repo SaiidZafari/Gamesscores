@@ -13,6 +13,6 @@ namespace Gamesscores.Models
 
         }
 
-        DbSet<Highscore> Highscores { get; set; }
+        public DbSet<Highscore> Highscores { get; set; }
     }
 }
