@@ -1,11 +1,18 @@
 ﻿@model IEnumerable<Highscore>
-
-<div class="text-center mid"><h2>Leaderboard</h2></div>
+@{ 
+    var num = 0;
+}
+<div class="text-center mid"><h2>Leaderboard-Max10</h2></div>
 <section class="mainSec">
-    @foreach (var score in @Model.OrderByDescending(m=>m.Score))
+    
+    @foreach (var score in @Model.OrderByDescending(m => m.Score))
     {
-        if (@score.Game == ViewData["Title"].ToString())
+
+
+        if (@score.Game == ViewData["Title"].ToString() && num < 10)
         {
+            num++;
+
             <div>
                 <section class="infoBox">
                     <div leftBox>

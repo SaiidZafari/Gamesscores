@@ -1,0 +1,16 @@
+﻿.slideText {
+    padding: 8% 0% 1% 2%;
+    width: 250px;
+    position: absolute;
+    top: 3%;
+    left: 65%;
+}
+
+    .slideText button {
+        width: 100px;
+    }
+
+.detailFigure img {
+    border-radius: 10px;
+   
+}

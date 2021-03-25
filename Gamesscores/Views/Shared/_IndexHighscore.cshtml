@@ -9,7 +9,7 @@
     @foreach (var game in @gameGroup.OrderBy(g=>g.Key))
     {
         @*<div>----- @game.Key ----  Make Highscore for every games------</div>*@
-        var maxScore = 0;
+    var maxScore = 0; 
 
         @foreach (var item in @Model)
         {
@@ -23,6 +23,8 @@
                 }
             }
         }
+
+        
 
         @foreach (var item in @Model)
         {

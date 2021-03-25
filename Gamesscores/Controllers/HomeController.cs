@@ -23,7 +23,7 @@ namespace Gamesscores.Controllers
             return View();
         }
 
-        public IActionResult Home()
+        public IActionResult Highscores()
         {
             var model = _highscoreRepository.GetAllHighscores();
             return View(model);            
