@@ -11,11 +11,11 @@ namespace Gamesscores.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IHighscoreRepository _highscoreRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHighscoreRepository highscoreRepository)
         {
-            _logger = logger;
+            _highscoreRepository = highscoreRepository;
         }
 
         public IActionResult Index()
@@ -25,7 +25,8 @@ namespace Gamesscores.Controllers
 
         public IActionResult Home()
         {
-            return View();
+            var model = _highscoreRepository.GetAllHighscores();
+            return View(model);            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

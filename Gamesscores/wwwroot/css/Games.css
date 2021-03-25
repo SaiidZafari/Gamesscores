@@ -1,0 +1,47 @@
+﻿.bodyArt {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.headSec {
+    /*border: 2px solid green;*/
+    padding:1%;
+
+    display: inherit;
+    
+}
+
+.textSec {
+    /*border: 2px solid yellow;*/
+    width: 50%;
+    padding: 0 1%;
+}
+
+    .textSec .div1 {
+        /*border: 2px solid blue;*/
+        display: flex;
+        margin: 2% 0;
+    }
+    .textSec .div2 {
+        /*border: 2px solid red;*/
+        display: flex;
+        align-content:center;
+    }
+
+.imageRam {
+    margin: 6% ;
+    /*border: 2px solid blue;*/
+    width: 40%;
+    /*height: 400px;*/
+}
+
+.imgGame {
+    width: 50%;
+}
+
+.gameDiv{
+}
+.gameDiv img{
+    width: 100%;
+}

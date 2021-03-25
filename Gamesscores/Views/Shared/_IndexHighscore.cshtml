@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Highscore>
+@{ 
+    var gameGroup = @Model.GroupBy(m => m.Game).OrderBy(m => m.Key);
+
+    var gameOrder = @Model.OrderByDescending(m => m.Score);
+}
+
+
+    @foreach (var game in @gameGroup.OrderBy(g=>g.Key))
+    {
+        @*<div>----- @game.Key ----  Make Highscore for every games------</div>*@
+        var maxScore = 0;
+
+        @foreach (var item in @Model)
+        {
+            if (item.Game == game.Key)
+            {
+                if (item.Score >= maxScore)
+                {
+
+                    maxScore = item.Score;
+
+                }
+            }
+        }
+
+        @foreach (var item in @Model)
+        {
+            if (item.Game == game.Key && item.Score == maxScore)
+            {
+                <section class="infoBox">
+                    <div leftBox>
+                        @*<div class="card-title gameName"><a href="/Games/@score.GameName">@score.GameName</a></div>*@
+                        <div class="card-title gameName">
+                            <a class="class=" text-primary text-dark scoreInfo" asp-area="" asp-controller="Highscores" asp-action=@item.Game>
+
+                                @item.Game
+
+                            </a>
+                        </div>
+                        <div class="text-xl-left nameDate">@item.Fullname, @item.Date.ToShortDateString()</div>
+                    </div>
+                    <span class="text-primary text-right rightBox scoreInfo">@item.Score</span>
+                </section>
+            }
+        }
+    }
+
+
+
+

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Gamesscores.Models
 {
     public class Highscore
-    {
+    {        
         public int Id { get; set; }
 
         [Required]

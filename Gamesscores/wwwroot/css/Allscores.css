@@ -1,0 +1,52 @@
+﻿.titleBox{
+    margin:1% 0 3% 0;
+}
+
+.title {
+    font-weight:600;
+    font-size:3em;
+}
+
+.register a {
+    font-size: 1.5em;
+    color:darkgreen;
+    font-weight:500;
+}
+
+.infoBox {
+    border: 3px solid red;
+    margin: 1% 0;
+    padding: 1%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.leftBox {
+    font-size: 1.2em;
+
+    display:inherit;
+    flex-direction:column;
+}
+
+.gameName {
+    font-size: 1.5em;
+    font-weight:bold;
+}
+
+.nameDate {
+    font-size:1.2em;
+    color: black;
+    font-weight:500;
+}
+
+.rightBox {
+    font-size: 2em;
+    font-weight:600;
+}
+
+.textSec h1 {
+    color:darkcyan;
+}

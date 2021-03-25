@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Highscore>
+
+<div class="text-center mid"><h2>Leaderboard</h2></div>
+<section class="mainSec">
+    @foreach (var score in @Model.OrderByDescending(m=>m.Score))
+    {
+        if (@score.Game == ViewData["Title"].ToString())
+        {
+            <div>
+                <section class="infoBox">
+                    <div leftBox>
+
+                        <div class="text-xl-left nameDate">@score.Fullname, @score.Date.ToShortDateString()</div>
+                    </div>
+                    <span class="text-primary text-right rightBox scoreInfo">@score.Score</span>
+                </section>
+            </div>
+        }
+
+    }
+</section>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Highscore>
+@{
+    var Games = @Model.GroupBy(m => m.Game).OrderBy(m => m.Key);
+}
+
+@foreach (var game in Games)
+{
+    <li class="nav-item">
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Highscores" asp-action=@game.Key>
+
+            @game.Key
+        </a>
+
+
+    </li>
+
+
+}

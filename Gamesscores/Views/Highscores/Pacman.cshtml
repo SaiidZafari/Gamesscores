@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Highscore>
+@{
+    ViewData["Title"] = "Pacman";
+}
+
+<article class="bodyArt">
+
+        <section class="headSec">
+            <div class="textSec">
+                <h1>@ViewData["Title"]</h1>
+
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                </span>
+                <div class="div1">
+                    <Label>Genre:</Label>
+                    <div>Puzzle</div>
+
+                </div>
+                <div class="div2">
+                    <Label>Release Year:</Label>
+                    <div>1984</div>
+
+                </div>
+            </div>
+
+            <div class="imageRam gameDiv">
+                <img src="/image/Pacman2.png" class="img-thumbnail card-img-top" alt="Alternate Text" />
+            </div>
+
+        </section>
+
+        <partial name="_Leaderboard" />
+       
+
+    </article>
+

@@ -25,9 +25,16 @@ namespace Gamesscores
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("HighscoreDBConnection")));
+            services.AddDbContextPool<AppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("HighscoreDBConnection")));
 
-            services.AddMvc().AddRazorRuntimeCompilation();
+            services.AddMvc().AddXmlDataContractSerializerFormatters();
+
+            //We are using AddScoped() method because we want the instance to be alive and available for the entire scope of the given HTTP request.  
+            services.AddScoped<IHighscoreRepository, SQLHighscoreRepository>();
+            //services.AddTransient<IHighscoreRepository, MockHighscoreRepository>();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
