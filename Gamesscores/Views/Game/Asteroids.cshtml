@@ -1,0 +1,55 @@
+﻿@model IEnumerable<GameList>
+@{
+    ViewData["Title"] = "Asteroids";
+}
+
+<article class="bodyArt">
+
+    <section class="headSec">
+
+
+        <h1>@ViewData["Title"]</h1>
+
+        @foreach (var game in Model)
+        {
+            if (game.Gamename == ViewData["Title"].ToString())
+            {
+                <div class="textSec">
+                    <span>@game.Description</span>
+
+                    <div class="div1">
+                        <Label>Genre:</Label>
+                        <div>@game.Genre</div>
+
+                    </div>
+                    <div class="div2">
+                        <Label>Release Year:</Label>
+                        <div>@game.Releaseyear</div>
+
+                    </div>
+                </div>
+
+                <div class="imageRam gameDiv">
+                    <img src="@game.ImageUrl" class="img-thumbnail card-img-top" alt="Alternate Text" />
+                </div>
+
+
+            }
+
+        }
+
+
+
+        @*<span>
+                Asteroids is a space-themed multidirectional shooter arcade game designed by Lyle Rains,
+                Ed Logg, and Dominic Walsh and released in November 1979 by Atari, Inc. The player controls
+                a single spaceship in an asteroid field which is periodically traversed by flying saucers.
+            </span>*@
+
+
+    </section>
+
+    @*<partial name="_Leaderboard" />*@
+
+</article>
+

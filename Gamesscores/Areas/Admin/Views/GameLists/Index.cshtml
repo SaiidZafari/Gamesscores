@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Gamesscores.Models.GameList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h1>Admin GameList </h1>
+</div>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="GameLists" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Releaseyear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gamename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Releaseyear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gamename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="GameLists" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="GameLists" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="GameLists" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

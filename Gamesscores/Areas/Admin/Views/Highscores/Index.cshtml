@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Gamesscores.Models.Highscore>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>Admin Highscore </h1>
+</div>
+
+<h1>Index</h1>
+
+<p>
+    <a  asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

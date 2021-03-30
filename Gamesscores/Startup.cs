@@ -62,6 +62,21 @@ namespace Gamesscores
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //endpoints.MapControllerRoute(
+                //    name: "areas",
+                //    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapAreaControllerRoute(
+                   name: "HScor",
+                   areaName:"Admin",
+                   pattern: "Admin/{controller=Highscores}/{action=Index}/{id?}");
+
+                endpoints.MapAreaControllerRoute(
+                   name: "GameL",
+                   areaName: "Admin",
+                   pattern: "Admin/{controller=GameLists}/{action=Index}/{id?}");
+
             });
         }
     }
