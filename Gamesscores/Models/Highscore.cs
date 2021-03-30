@@ -24,5 +24,9 @@ namespace Gamesscores.Models
 
         [Required]
         public DateTime Date { get; set; }
+
+        public GameList GameList { get; set; }
+
+       
     }
 }

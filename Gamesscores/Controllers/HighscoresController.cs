@@ -41,15 +41,29 @@ namespace Gamesscores.Controllers
             return View(model);
         }
 
-        public IActionResult New()
+
+        //public class HighscoreViewModel
+        //{
+        //    public IEnumerable<Games> Games;
+        //}
+
+
+        public IActionResult Create()
         {
+
+            //    // Load games
+            //    var viewModel = new HighscoreViewModel
+            //    {
+            //        Games = cntext.Games.ToList()
+            //    }
+            //        return View(viewModel);
 
             return View();
         }
 
 
         [HttpPost]   //Using IActionResult is due to both View and RedirectToAction can used them
-        public IActionResult New(Highscore model)
+        public IActionResult Create(Highscore model)
         {
             if (ModelState.IsValid)
             {

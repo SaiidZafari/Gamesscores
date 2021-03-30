@@ -9,10 +9,10 @@
 </h2>
 
 <div class="col-md-6">
-    <form enctype="multipart/form-data" asp-controller="Highscores" asp-action="New" method="post">
+    <form enctype="multipart/form-data" asp-controller="Highscores" asp-action="Create" method="post">
         <div class="form-group ">
             <label class="font-weight-bold" asp-for="Game"></label>
-            <select class="form-control" asp-for="Game">
+            <select tag- class="form-control" asp-for="Game">
                 <option value="">Please Select ...</option>
                 <option value="Asteroids">Asteroids</option>
                 <option value="Donkey_Kong">Donkey_Kong</option>
