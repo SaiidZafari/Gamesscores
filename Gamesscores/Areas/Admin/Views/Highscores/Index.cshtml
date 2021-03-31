@@ -5,15 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <h1>Admin Highscore </h1>
+<div class="mb-sm-4">
+    <h1>Index</h1>
+    <h4>Highscore</h4>
 </div>
 
-<h1>Index</h1>
 
-<p>
-    <a  asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Create">Create New</a>
-</p>
+@*<p>
+    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Create">Create New</a>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -33,26 +33,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fullname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Game)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Game)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="Highscores" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

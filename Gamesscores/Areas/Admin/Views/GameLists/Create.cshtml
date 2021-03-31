@@ -14,12 +14,12 @@
         <form asp-controller="GameLists" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Releaseyear" class="control-label"></label>
+                <label asp-for="Releaseyear" class="control-label">Release year</label>
                 <input asp-for="Releaseyear" class="form-control" />
                 <span asp-validation-for="Releaseyear" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Gamename" class="control-label"></label>
+                <label asp-for="Gamename" class="control-label">Game name</label>
                 <input asp-for="Gamename" class="form-control" />
                 <span asp-validation-for="Gamename" class="text-danger"></span>
             </div>
@@ -34,11 +34,11 @@
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
+                <label asp-for="ImageUrl" class="control-label">Image Url</label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-sm-4">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -46,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-protocol="https" asp-host="localhost:44380/Admin" asp-controller="GameLists" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
