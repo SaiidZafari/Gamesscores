@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GameList>
+@{
+}
+<section class="headSec">
+    @foreach (var game in Model)
+    {
+        if (@game.Gamename == @ViewData["Title"].ToString())
+        {
+            <div class="textSec">
+                <h1>@ViewData["Title"]</h1>
+
+                <span>
+                    @game.Description
+                </span>
+                <div class="div1">
+                    <Label>Genre:</Label>
+                    <div>@game.Genre</div>
+
+                </div>
+                <div class="div2">
+                    <Label>Release Year:</Label>
+                    <div>@game.Releaseyear</div>
+
+                </div>
+            </div>
+
+            <div class="imageRam gameDiv">
+                <img class="img-thumbnail card-img-top" src="@game.ImageUrl" alt="Alternate Text" />
+            </div>
+        }
+    }
+
+
+</section>
