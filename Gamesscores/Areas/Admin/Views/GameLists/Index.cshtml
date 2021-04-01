@@ -23,7 +23,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Gamename)
             </th>
-            <th class="w-50">
+            <th class="w-25">
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
@@ -44,7 +44,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Gamename)
             </td>
-            <td class="w-50">
+            <td >
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
@@ -54,9 +54,9 @@
                 @Html.DisplayFor(modelItem => item.ImageUrl)
             </td>
             <td>
-                <a asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-primary" asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-info" asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn-danger" asp-protocol="https" asp-host="localhost:44380" asp-controller="GameLists" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
