@@ -32,6 +32,24 @@ namespace Gamesscores.Models
             return highscore;
         }
 
+        public IEnumerable<GameList> GetAllGameLists()
+        {
+            return context.gameLists;
+        }
+
+        public IEnumerable<string> GetAllGames()
+        {
+            var game = context.gameLists;
+            var games = new List<string>();
+
+            foreach (var g in game)
+            {
+                games.Add(g.Gamename);
+            }
+
+            return games;
+        }
+
         public IEnumerable<Highscore> GetAllHighscores()
         {
             return context.Highscores;
@@ -48,6 +66,19 @@ namespace Gamesscores.Models
             highscore.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return highscoreChanges;
+        }
+
+        IEnumerable<GameList> IHighscoreRepository.GetAllGameLists()
+        {
+            var game = context.gameLists;
+            var games = new List<string>();
+
+            foreach (var g in game)
+            {
+                games.Add(g.Gamename);
+            }
+
+            return (IEnumerable<GameList>)games;
         }
     }
 }

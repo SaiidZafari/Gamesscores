@@ -16,5 +16,6 @@ namespace Gamesscores.Models
         public DbSet<Highscore> Highscores { get; set; }
 
         public DbSet<GameList> gameLists { get; set; }
+        public IEnumerable<Highscore> GameLists { get; internal set; }
     }
 }

@@ -11,6 +11,10 @@ namespace Gamesscores.Models
         Highscore GetHighscore(int Id);
         IEnumerable<Highscore> GetAllHighscores();
 
+        IEnumerable<GameList> GetAllGameLists();
+
+        IEnumerable<string> GetAllGames();
+
         Highscore Add(Highscore highscore);
         //Highscore Add(RegisterHighscore highscore);
 

@@ -12,13 +12,17 @@
     <form enctype="multipart/form-data" asp-controller="Highscores" asp-action="Create" method="post">
         <div class="form-group ">
             <label class="font-weight-bold" asp-for="Game"></label>
-            <select tag- class="form-control" asp-for="Game">
+            <select class="form-control" asp-for="Game" asp-items="new SelectList(ViewBag.Games)">
                 <option value="">Please Select ...</option>
-                <option value="Asteroids">Asteroids</option>
-                <option value="Donkey_Kong">Donkey_Kong</option>
-                <option value="Pacman">Pacman</option>
-                <option value="Tetris">Tetris</option>
             </select>
+
+            @*<select tag- class="form-control" asp-for="Game">
+            <option value="">Please Select ...</option>
+            <option value="Asteroids">Asteroids</option>
+            <option value="Donkey_Kong">Donkey_Kong</option>
+            <option value="Pacman">Pacman</option>
+            <option value="Tetris">Tetris</option>
+        </select>*@
             <span asp-validation-for="Game" class="text-danger"></span>
 
             @*<select class="form-control" asp-for="GameName" asp-items="Html.GetEnumSelectList<Games>()"></select>*@

@@ -57,7 +57,7 @@ namespace Gamesscores.Controllers
             //        Games = cntext.Games.ToList()
             //    }
             //        return View(viewModel);
-
+            ViewBag.Games = _highscoreRepository.GetAllGames().OrderBy(g => g);
             return View();
         }
 
@@ -78,7 +78,7 @@ namespace Gamesscores.Controllers
                 _highscoreRepository.Add(highscore);
                 return RedirectToAction(highscore.Game, new { id = highscore.Id });
             }
-
+            ViewBag.Games = _highscoreRepository.GetAllGames().OrderBy(g => g);
             return View();  //if not succes then back to same page
         }
     }
