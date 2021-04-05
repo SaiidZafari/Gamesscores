@@ -1,13 +1,12 @@
-﻿@model IEnumerable<GameList>
-@{
-}
-<section class="headSec">
-    @foreach (var game in Model)
+﻿@model IEnumerable<Highscore>
+
+@foreach (var game in @ViewBag.GameLists)
+{
+    if (@game.Gamename == @ViewData["Title"].ToString())
     {
-        if (@game.Gamename == @ViewData["Title"].ToString())
-        {
+        <section class="headSec">
             <div class="textSec">
-                <h1>@ViewData["Title"]</h1>
+                <h1>@game.Gamename</h1>
 
                 <span>
                     @game.Description
@@ -27,8 +26,8 @@
             <div class="imageRam gameDiv">
                 <img class="img-thumbnail card-img-top" src="@game.ImageUrl" alt="Alternate Text" />
             </div>
-        }
+
+        </section>
     }
 
-
-</section>
+}

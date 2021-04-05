@@ -19,24 +19,35 @@ namespace Gamesscores.Controllers
 
         public IActionResult Tetris()
         {
+            ViewBag.GameLists = _highscoreRepository.GetAllGameLists();
             var model = _highscoreRepository.GetAllHighscores();
             return View(model);
         }
 
         public IActionResult Pacman()
         {
+            ViewBag.GameLists = _highscoreRepository.GetAllGameLists();
             var model = _highscoreRepository.GetAllHighscores();
             return View(model);
         }
 
         public IActionResult Donkey_Kong()
         {
+            ViewBag.GameLists = _highscoreRepository.GetAllGameLists();
             var model = _highscoreRepository.GetAllHighscores();
             return View(model);
         }
 
         public IActionResult Asteroids()
         {
+            ViewBag.GameLists = _highscoreRepository.GetAllGameLists();
+            var model = _highscoreRepository.GetAllHighscores();
+            return View(model);
+        }
+
+        public IActionResult Games()
+        {
+            ViewBag.GameLists = _highscoreRepository.GetAllGameLists();
             var model = _highscoreRepository.GetAllHighscores();
             return View(model);
         }
@@ -50,7 +61,7 @@ namespace Gamesscores.Controllers
 
         public IActionResult Create()
         {
-
+           // var ViewModel = _highscoreRepository.GetAllGames();
             //    // Load games
             //    var viewModel = new HighscoreViewModel
             //    {
@@ -78,6 +89,7 @@ namespace Gamesscores.Controllers
                 _highscoreRepository.Add(highscore);
                 return RedirectToAction(highscore.Game, new { id = highscore.Id });
             }
+                       
             ViewBag.Games = _highscoreRepository.GetAllGames().OrderBy(g => g);
             return View();  //if not succes then back to same page
         }

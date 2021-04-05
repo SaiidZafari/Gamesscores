@@ -5,33 +5,7 @@
 
 <article class="bodyArt">
 
-    <section class="headSec">
-        <div class="textSec">
-            <h1>@ViewData["Title"]</h1>
-
-            <span>
-                Tetris is a tile-matching video game created by Russian software engineer 
-                Alexey Pajitnov in 1984. It has been published by several companies, most 
-                prominently during a dispute over the appropriation of the rights in the late 1980s.
-            </span>
-            <div class="div1">
-                <Label>Genre:</Label>
-                <div>Puzzle</div>
-
-            </div>
-            <div class="div2">
-                <Label>Release Year:</Label>
-                <div>1984</div>
-
-            </div>
-        </div>
-
-        <div class="imageRam gameDiv">
-            <img class="img-thumbnail card-img-top" src="/image/Tetris1.png" alt="Alternate Text" />
-        </div>
-
-    </section>
-
+    <partial name="_GameTop" />
     <partial name="_Leaderboard" />
-       
+
 </article>

@@ -67,18 +67,6 @@ namespace Gamesscores.Models
             context.SaveChanges();
             return highscoreChanges;
         }
-
-        IEnumerable<GameList> IHighscoreRepository.GetAllGameLists()
-        {
-            var game = context.gameLists;
-            var games = new List<string>();
-
-            foreach (var g in game)
-            {
-                games.Add(g.Gamename);
-            }
-
-            return (IEnumerable<GameList>)games;
-        }
+              
     }
 }
